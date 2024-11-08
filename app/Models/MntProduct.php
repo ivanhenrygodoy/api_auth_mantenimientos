@@ -11,4 +11,8 @@ class MntProduct extends Model
 
     protected $table = 'mnt_product';
 
+    protected $guarded = [
+        'id'
+    ];
+
 }

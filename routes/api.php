@@ -26,6 +26,9 @@ Route::controller(AuthController::class)->group(function (){
 
 Route::prefix('/products')->group(function () {
     Route::get('/', [MntProductController::class, 'search_product'])->middleware('auth', 'api');
+    Route::post('/create-product', [MntProductController::class, 'post_product'])->middleware('auth', 'api');
+    Route::put('/update-product/{id}', [MntProductController::class, 'put_product'])->middleware('auth', 'api');
+    Route::put('/change-state-product/{id}', [MntProductController::class, 'change_product_state'])->middleware('auth', 'api');
 });
 
 
